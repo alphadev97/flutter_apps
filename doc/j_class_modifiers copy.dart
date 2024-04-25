@@ -10,7 +10,7 @@ void main() {
   //     print('human');
   // }
 
-  Animal();
+  // Animal();
   Animal1();
 }
 
