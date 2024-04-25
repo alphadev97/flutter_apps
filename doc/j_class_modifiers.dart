@@ -1,9 +1,33 @@
-void main() {}
+void main() {
+  // Animal animal = Cat();
 
-abstract class Animal {}
+  // switch (animal) {
+  //   case Dog():
+  //     print('dog');
+  //   case Cat():
+  //     print('cat');
+  //   case Human():
+  //     print('human');
+  // }
 
-class Human implements Animal {}
+  Animal();
+  Animal1();
+}
 
-class Dog implements Animal {}
+sealed class Animal {}
 
-class Cat extends Animal {}
+final class Animal1 {}
+
+base class Animal2 {}
+
+interface class Animal3 {}
+
+abstract interface class Animal4 {}
+
+mixin class Animal5 {}
+
+// class Human implements Animal {}
+
+// class Dog implements Animal {}
+
+// class Cat extends Animal {}
