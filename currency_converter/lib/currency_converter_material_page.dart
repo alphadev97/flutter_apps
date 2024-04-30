@@ -5,13 +5,21 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    final border = OutlineInputBorder(
+      borderSide: const BorderSide(
+        width: 2.0,
+        style: BorderStyle.none,
+      ),
+      borderRadius: BorderRadius.circular(5),
+    );
+
+    return Scaffold(
       backgroundColor: Colors.blueGrey,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "0",
               style: TextStyle(
                 fontSize: 35,
@@ -19,24 +27,40 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
                 color: Color.fromARGB(255, 255, 255, 255),
               ),
             ),
-            TextField(
-              style: TextStyle(
-                color: Colors.white,
-              ),
-              decoration: InputDecoration(
-                hintText: "Please enter your amount in USD",
-                hintStyle: TextStyle(
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextField(
+                style: const TextStyle(
                   color: Colors.black,
                 ),
-                prefixIcon: Icon(Icons.monetization_on_outlined),
-                prefixIconColor: Colors.black,
-                filled: true,
-                fillColor: Colors.white,
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.red),
+                decoration: InputDecoration(
+                  hintText: "Please enter your amount in USD",
+                  hintStyle: const TextStyle(
+                    color: Colors.black,
+                  ),
+                  prefixIcon: const Icon(Icons.monetization_on_outlined),
+                  prefixIconColor: Colors.black,
+                  filled: true,
+                  fillColor: Colors.white,
+                  focusedBorder: border,
+                  enabledBorder: border,
+                ),
+                keyboardType: const TextInputType.numberWithOptions(
+                  decimal: true,
                 ),
               ),
             ),
+            // button
+
+            // raised
+            // appears like a text
+
+            TextButton(
+              onPressed: () {
+                debugPrint("Button Clicked!");
+              },
+              child: const Text("Click Me"),
+            )
           ],
         ),
       ),
