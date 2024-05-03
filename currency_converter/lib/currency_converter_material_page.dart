@@ -36,9 +36,9 @@ class _CurrencyConverterMaterialPageState
     );
 
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.blueAccent,
       appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.blueAccent,
         elevation: 0,
         title: const Text(
           "Currecy Converter",
@@ -51,7 +51,7 @@ class _CurrencyConverterMaterialPageState
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "PKR $result",
+              "PKR ${result != 0 ? result.toStringAsFixed(2) : result.toStringAsFixed(0)}",
               style: const TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
