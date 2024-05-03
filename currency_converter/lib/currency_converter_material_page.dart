@@ -1,8 +1,29 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class CurrencyConverterMaterialPage extends StatelessWidget {
+// 1. create a variable that stores the converted currency value
+// 2. create a function that multiplies the value given by the textfield with your prefer currency
+// 3. store the value in the variable we created
+// 4. Display the variable
+
+class CurrencyConverterMaterialPage extends StatefulWidget {
   const CurrencyConverterMaterialPage({super.key});
+
+  @override
+  State<CurrencyConverterMaterialPage> createState() =>
+      _CurrencyConverterMaterialPageState();
+}
+
+class _CurrencyConverterMaterialPageState
+    extends State<CurrencyConverterMaterialPage> {
+  double result = 0;
+  int currency = 278;
+  final TextEditingController textEditingController = TextEditingController();
+
+  void convert() {
+    setState(() {
+      result = double.parse(textEditingController.text) * currency;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +50,9 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              "0",
-              style: TextStyle(
+            Text(
+              "PKR $result",
+              style: const TextStyle(
                 fontSize: 35,
                 fontWeight: FontWeight.bold,
                 color: Color.fromARGB(255, 255, 255, 255),
@@ -40,6 +61,7 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextField(
+                controller: textEditingController,
                 style: const TextStyle(
                   color: Colors.black,
                 ),
@@ -68,12 +90,7 @@ class CurrencyConverterMaterialPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextButton(
-                onPressed: () {
-                  // debug, release, profile
-                  if (kDebugMode) {
-                    print("Button Clicked!");
-                  }
-                },
+                onPressed: convert,
                 style: TextButton.styleFrom(
                   backgroundColor: (Colors.black),
                   foregroundColor: (Colors.white),
