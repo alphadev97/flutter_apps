@@ -89,11 +89,31 @@ class WeatherScreen extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  HourlyForecastItem(),
-                  HourlyForecastItem(),
-                  HourlyForecastItem(),
-                  HourlyForecastItem(),
-                  HourlyForecastItem(),
+                  HourlyForecastItem(
+                    time: "00:00",
+                    icon: Icons.cloud,
+                    tempreture: "301.22",
+                  ),
+                  HourlyForecastItem(
+                    time: "03:00",
+                    icon: Icons.sunny,
+                    tempreture: "300.52",
+                  ),
+                  HourlyForecastItem(
+                    time: "06:00",
+                    icon: Icons.cloud,
+                    tempreture: "302.22",
+                  ),
+                  HourlyForecastItem(
+                    time: "09:00",
+                    icon: Icons.sunny,
+                    tempreture: "301.12",
+                  ),
+                  HourlyForecastItem(
+                    time: "12:00",
+                    icon: Icons.cloud,
+                    tempreture: "304.12",
+                  ),
                 ],
               ),
             ),
@@ -114,9 +134,21 @@ class WeatherScreen extends StatelessWidget {
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                AdditionalInfoItem(),
-                AdditionalInfoItem(),
-                AdditionalInfoItem(),
+                AdditionalInfoItem(
+                  icon: Icons.water_drop,
+                  label: "Humidity",
+                  value: "91",
+                ),
+                AdditionalInfoItem(
+                  icon: Icons.air,
+                  label: "Wind Speed",
+                  value: "7.5",
+                ),
+                AdditionalInfoItem(
+                  icon: Icons.beach_access,
+                  label: "Pressure",
+                  value: "1000",
+                ),
               ],
             )
           ],
